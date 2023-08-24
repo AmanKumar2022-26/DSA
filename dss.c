@@ -31,6 +31,7 @@ int main(){
         }
         
     }
+    printf("\n Sum of two matrix : \n");
 
     for (int i = 0; i < r; i++)
     {
