@@ -30,7 +30,7 @@ void display(){
     }
 }
  
- 
+// This is main function.
 int main(){
     push(5);
     push (7);
