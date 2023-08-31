@@ -34,6 +34,8 @@ void display(){
 int main(){
     push(5);
     push (7);
+    push(3);
+    push(45);
 
 
     return 0;
