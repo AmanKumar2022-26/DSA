@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #define size 10
 int stack[size];
 int top=-1;
@@ -46,6 +47,37 @@ void display(){
     }
 }
 int main(){
+    int choice;
+    int value;
+    do{
+        printf("\n1.push value: \n2.pop value: \n3.peek value: \n4.display: \n5.exit\n\nEnter choice:");
+        scanf("%d",&choice);
+
+        switch(choice)
+        {
+            case 1:
+                printf("Enter number you want to push: ");
+                scanf("%d",&value);
+                push(value);
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                peek();
+                break;
+            case 4:
+                display();
+                break;
+            case 5:
+                exit(0);
+            default:
+                printf("invalid");
+
+
+        }
+    }while(1);
+    /*
     push(6);
     push(7);
     push(8);
@@ -57,6 +89,7 @@ int main(){
     pop();
     peek();
     display();
+    */
 
     return 0;
 }
