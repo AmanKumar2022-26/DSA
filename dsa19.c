@@ -72,7 +72,7 @@ int main(){
             case 5:
                 exit(0);
             default:
-                printf("invalid");
+                printf("invalid:");
 
 
         }
