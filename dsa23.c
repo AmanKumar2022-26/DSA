@@ -1,67 +1,76 @@
+//Corrected
 
 #include <stdio.h>
 #include <stdlib.h>
 
 #define size 5
-int cqueue [size];
+int cqueue[size];
 int front = -1, rear = -1;
 
-void CQINSERT(int value){
-    if ((rear + 1) % size == front){
+void CQINSERT(int value)
+{
+    if ((rear + 1) % size == front)
+    {
         printf(".The queue is full:\n");
     }
-    if(front == -1 && rear == -1){
-        front=rear=0;
-
+    if (front == -1 && rear == -1)
+    {
+        front = rear = 0;
     }
-    else{
-         rear = (rear + 1) % size;
+    else
+    {
+        rear = (rear + 1) % size;
     }
     cqueue[rear] = value;
     printf("Inserted %d into the queue.\n", value);
 }
 
-void CQDELETE(){
+int CQDELETE()
+{
     int deletedvalue;
-    if (front == -1 && rear == -1){
+    if (front == -1 && rear == -1)
+    {
         printf("the queue is empty:\n");
-        return-1;
+        return -1;
     }
-     deletedvalue = cqueue[front];
+    deletedvalue = cqueue[front];
 
-    if (front == rear) {
-        front = rear = -1; 
-    } else {
+    if (front == rear)
+    {
+        front = rear = -1;
+    }
+    else
+    {
         front = (front + 1) % size;
     }
 
     return deletedvalue;
 }
 
-
-
-int main(){
+int main()
+{
     int choice;
     int data;
-    do{
+    do
+    {
         printf("1. insert data in queue: \n2. delete data from queue:  \n3.exit\n Enter your choice: ");
-        scanf("%d",&choice);
+        scanf("%d", &choice);
 
-        switch(choice)
+        switch (choice)
         {
         case 1:
-        printf("enter value: ");
-        scanf("%d",&data);
-        CQINSERT(data);
-        break;
+            printf("enter choice: ");
+            scanf("%d", &data);
+            CQINSERT(data);
+            break;
         case 2:
-        CQDELETE();
-        break;
+            printf("Deleted Value : %d\n", CQDELETE());
+            break;
         case 3:
-        exit(0);
+            exit(0);
         default:
-        printf("Invalid");
+            printf("Invalid");
         }
-    }while(1);
+    } while (1);
     return 0;
 }
