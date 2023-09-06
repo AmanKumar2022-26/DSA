@@ -1,5 +1,6 @@
 //queue question 1
 #include <stdio.h>
+#include<stdlib.h>
 
 #define size 5
 int queue [size];
@@ -61,7 +62,7 @@ int main(){
         switch(choice)
         {
         case 1:
-        printf("enter choice: ");
+        printf("enter value: ");
         scanf("%d",&data);
         enqueue(data);
         break;
