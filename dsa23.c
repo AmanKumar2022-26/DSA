@@ -51,6 +51,7 @@ int main()
 {
     int choice;
     int data;
+    int rtn;
     do
     {
         printf("1. insert data in queue: \n2. delete data from queue:  \n3.exit\n Enter your choice: ");
@@ -59,13 +60,19 @@ int main()
         switch (choice)
         {
         case 1:
-            printf("enter choice: ");
+            printf("enter value: ");
             scanf("%d", &data);
             CQINSERT(data);
             break;
         case 2:
-            printf("Deleted Value : %d\n", CQDELETE());
-            break;
+            rtn = CQDELETE();
+            if(rtn!=-1){
+                printf("Deleted Value : %d\n", rtn);
+                break;
+            }
+            else{
+                break;
+            }
         case 3:
             exit(0);
         default:
